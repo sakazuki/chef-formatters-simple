@@ -6,10 +6,10 @@ require 'chef/formatters/simple/version'
 Gem::Specification.new do |spec|
   spec.name          = "chef-formatters-simple"
   spec.version       = Chef::Formatters::Simple::VERSION
-  spec.authors       = ["saito"]
-  spec.email         = ["saito@indigo.co.jp"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.authors       = ["sakazuki"]
+  spec.email         = ["sakazuki@gmail.com"]
+  spec.summary       = %q{chef-client simple formatter}
+  spec.description   = %q{chef-client simple formatter outputs that minimal's output plus delta}
   spec.homepage      = ""
   spec.license       = "MIT"
 
