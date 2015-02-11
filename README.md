@@ -1,6 +1,6 @@
 # Chef::Formatters::Simple
 
-TODO: Write a gem description
+chef-client simple formatter
 
 ## Installation
 
@@ -20,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```bash
+chef-client -F simple -W
+```
 
 ## Contributing
 
