@@ -5,7 +5,7 @@ require 'chef/formatters/simple/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "chef-formatters-simple"
-  spec.version       = Chef::Formatters::Simple::VERSION
+  spec.version       = Chef::Formatters::Simple_VERSION
   spec.authors       = ["sakazuki"]
   spec.email         = ["sakazuki@gmail.com"]
   spec.summary       = %q{chef-client simple formatter}

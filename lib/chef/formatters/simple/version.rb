@@ -1,7 +1,5 @@
-module Chef
+class Chef
   module Formatters
-    module Simple
-      VERSION = "0.0.1"
-    end
+    Simple_VERSION = "0.0.2"
   end
 end
