@@ -20,6 +20,14 @@ Or install it yourself as:
 
 ## Usage
 
+Add below in /etc/chef/client.rb:
+
+```
+require 'chef/formatters/simple'
+```
+
+Use chef-client with -F or --format option
+
 ```bash
 chef-client -F simple -W
 ```
