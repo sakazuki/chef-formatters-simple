@@ -22,7 +22,7 @@ Or install it yourself as:
 
 Add below in /etc/chef/client.rb:
 
-```
+```ruby
 require 'chef/formatters/simple'
 ```
 
@@ -31,6 +31,22 @@ Use chef-client with -F or --format option
 ```bash
 chef-client -F simple -W
 ```
+
+When you want to use "simple" instead of "doc" for default, then add below in /etc/chef/client.rb:
+
+```ruby
+class Chef::Client
+  alias :orig_default_formatter :default_formatter
+  def default_formatter
+    if (STDOUT.tty? && !Chef::Config[:force_logger]) || Chef::Config[:force_formatter]
+      [:simple]
+    else
+      [:null]
+    end
+  end
+end
+```
+
 
 ## Contributing
 
