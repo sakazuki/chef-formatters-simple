@@ -34,12 +34,12 @@ class Chef
 
       # Called at the end of the Chef run.
       def run_completed(node)
-        puts "chef client finished, #{@updated_resources.size} resources updated"
+        @output.puts "chef client finished, #{@updated_resources.size} resources updated", :green
       end
 
       # called at the end of a failed run
       def run_failed(exception)
-        puts "chef client failed. #{@updated_resources.size} resources updated"
+        @output.puts "\nchef client failed. #{@updated_resources.size} resources updated", :red
       end
 
       # Called right after ohai runs.
@@ -67,6 +67,7 @@ class Chef
 
       # Failed to load node data from the server
       def node_load_failed(node_name, exception, config)
+        super
       end
 
       # Default and override attrs from roles have been computed, but not yet applied.
@@ -82,6 +83,7 @@ class Chef
       # Called when there is an error getting the cookbook collection from the
       # server.
       def cookbook_resolution_failed(expanded_run_list, exception)
+        super
       end
 
       # Called when the cookbook collection is returned from the server.
@@ -201,10 +203,12 @@ class Chef
 
       # Called when a resource fails, but will retry.
       def resource_failed_retriable(resource, action, retry_count, exception)
+        super
       end
 
       # Called when a resource fails and will not be retried.
       def resource_failed(resource, action, exception)
+        super
       end
 
       # Called when a resource action has been skipped b/c of a conditional
