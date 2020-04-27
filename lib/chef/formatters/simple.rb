@@ -29,17 +29,17 @@ class Chef
 
       # Called at the very start of a Chef Run
       def run_start(version)
-        puts "Starting Chef Client, version #{version}"
+        puts "Starting #{Chef::Dist::PRODUCT}, version #{version}"
       end
 
       # Called at the end of the Chef run.
       def run_completed(node)
-        @output.puts "chef client finished, #{@updated_resources.size} resources updated", :green
+        @output.puts "#{Chef::Dist::PRODUCT} finished, #{@updated_resources.size} resources updated", :green
       end
 
       # called at the end of a failed run
       def run_failed(exception)
-        @output.puts "\nchef client failed. #{@updated_resources.size} resources updated", :red
+        @output.puts "\n#{Chef::Dist::PRODUCT} failed. #{@updated_resources.size} resources updated", :red
       end
 
       # Called right after ohai runs.
